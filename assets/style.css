@@ -17,16 +17,6 @@ h2 {
 	padding: 2em;
 }
 
-h3 {
-	margin-top: 1em;
-	margin-bottom: 60px;
-	font-size: 30px;
-}
-
-p {
-	font-size: 14px
-}
-
 /*************** Header ********************/
 header {
 	background-color: white;
@@ -112,18 +102,27 @@ nav a {
 	width: 60%;
 }
 
-#texteAbout-mep {
+#texteAbout-me p {
 	width: 80%;
 }
 
-#texteAbout-me h2 {
-	text-align: left;
-	padding: 0;
+#texteAbout-me .introduction{
+	width: 60%;
+}
+
+#texteAbout-me h3 {
+	margin-top: 1em;
+    margin-bottom: 60px;
+    font-size: 30px;
 }
 
 /**************** Gallery ***********/
 #gallery {
 	/*	min-height: 100vh; */
+}
+
+.gallery .nav {
+	justify-content: center;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -169,21 +168,20 @@ nav a {
 /********** Citations **********/
 
 .quote {
-	font-family: 'Spectral';
-	font-style: italic;
 	width: 70%;
 	margin: auto;
 	padding-block: 3em;
 }
 
 .quote__text {
-	font-family: Spectral;
+	font-family: "Spectral";
 	font-style: italic;
 	font-weight: 300;
+	font-size: 2.5rem;
 }
 
 .quote__author {
-	font-family: Spectral;
+	font-family: "Spectral";
 	font-weight: 800;
 	font-size: 22px;
 }
@@ -195,7 +193,7 @@ nav a {
 	position: relative;
 }
 
-.allservices::before{
+#services .container::before{
 	content: ' ';
 	background-color: #1C6474;
 	position: absolute;
@@ -206,9 +204,9 @@ nav a {
 	z-index: 0;
 }
 
-.allservices {
-	justify-content: space-between;
+#services .container {
 	display: flex;
+	justify-content: space-between;
 	padding : 2em 0;
 }
 
@@ -272,17 +270,17 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1180px) {
-	.picture {
+	h3 {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	.photoNina, .photoContact{
 		flex : 2;
 	}
 
 	#about-me, #contact .container {
 		align-items: center;
-	}
-
-	h3 {
-		margin-top: 0;
-		margin-bottom: 1em;
 	}
 
 	#texteAbout-me p {
@@ -291,6 +289,7 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1000px) {
+	/* About me */
 	#about-me{
 		flex-direction: column;
 	}
@@ -312,9 +311,11 @@ input[type="submit"] {
 	#texteAbout-me h2{
 		text-align: center;
 		margin-top: 1em;
+		font-size: 1rem
 	}
 
-	.allservices {
+	/* Services */
+	#service .container {
 		flex-direction: column;
 	}
 
@@ -325,11 +326,11 @@ input[type="submit"] {
 		margin: 2em 0
 	}
 
-	.service__description{
+	.service__description {
 		margin-bottom: 1em;
 	}
 
-	.allservices::before{
+	#service .container::before {
 		width: 30%;
 		height: 100%;
 		bottom: 0;
@@ -338,6 +339,7 @@ input[type="submit"] {
 		z-index: 0;
 	}
 
+	/* Contact */
 	#contact .container {
 		flex-direction: column;
 	}
@@ -357,6 +359,7 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 650px) {
+	/* Header */
 	header {
 		flex-direction: column;
 		padding-inline: 0;
@@ -373,11 +376,17 @@ input[type="submit"] {
 		text-align: center;
 	}
 
+	/* About Me */
 	.photoNina::before, .photoContact::before {
 		height: 150px;
 	}
+	
+	.photoNina, .photoContact {
+		width: 80%;
+	}
 
-	.allservices {
+	/* Services */
+	#services .container {
 		align-items: center;
 	}
 
@@ -390,12 +399,9 @@ input[type="submit"] {
 		padding-block: 2em;
 	}
 
+	/* Contacts */
 	form {
 		width: 100%;
-	}
-
-	.picture {
-		width: 80%;
 	}
 }
 
