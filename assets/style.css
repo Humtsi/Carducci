@@ -17,6 +17,11 @@ h2 {
 	padding: 2em;
 }
 
+input[type="submit"] {
+	background-color: #BEB45A;
+	padding: .5em 1em
+}
+
 /*************** Header ********************/
 header {
 	background-color: white;
@@ -70,17 +75,6 @@ nav a {
 	z-index: -1;
 }
 
-.photoContact::before {
-	content: ' ';
-	background-color: #BEB45A;
-	width: 374px;
-	height: 329px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-}
-
 .photoNina, .photoContact {
 	flex: 1;
 	margin: 0 20px;
@@ -125,9 +119,9 @@ nav a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
+	color: black;
 	background-color: #BEB45A;
-	border-radius:0 ;
+	border-radius: 0 ;
 }
 
 .nav-pills .nav-link {
@@ -263,9 +257,15 @@ form textarea {
 	margin-bottom: 20px;
 }
 
-input[type="submit"] {
+.photoContact::before {
+	content: ' ';
 	background-color: #BEB45A;
-	padding: .5em 1em
+	width: 374px;
+	height: 329px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
 }
 
 @media all and (max-width: 1180px) {
